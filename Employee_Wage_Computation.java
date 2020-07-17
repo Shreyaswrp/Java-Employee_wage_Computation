@@ -13,6 +13,8 @@ System.out.println("*********Welcome To Employee Wage System**********");
 		int dailyWage;
 		int dailyHours;
 		//computation
+		for ( int day=0 ; day<=dayPerMonth ; day++ )
+		{
 		int empCheck = (int) Math.floor(Math.random() * 10) % 3;
 		switch (empCheck) {
 			case fullTime:
@@ -25,7 +27,12 @@ System.out.println("*********Welcome To Employee Wage System**********");
 				dailyHours = 0;
 				break;
 		}
-		System.out.println("Employee daily wage is "+(wagePerHour * dailyHours));		
+		//Calculating Monthly Wage
+		dailyWage = wagePerHour * dailyHours;
+			monthlyWage += dailyWage;
+		}
+		System.out.println("Employee daily wage is "+(wagePerHour * dailyHours));
+		System.out.println("Employee monthly wage is "+monthlyWage);
 }
 
 }
